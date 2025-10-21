@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>舒格尔方块挑战</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>舒格尔方块挑战</h1>
+            <p class="subtitle">测试你的反应速度和手眼协调能力</p>
+        </header>
+        
+        <div class="main-content">
+            <section class="game-section">
+                <h2 class="section-title">游戏挑战</h2>
+                
+                <div class="mode-selector">
+                    <button class="mode-btn active" data-mode="classic">经典模式</button>
+                    <button class="mode-btn" data-mode="speed">极速模式</button>
+                </div>
+                
+                <div class="game-info">
+                    <div>
+                        <h3>当前模式: <span id="current-mode">经典模式</span></h3>
+                        <p id="mode-description">点击出现的方块，尽可能快地完成挑战</p>
+                    </div>
+                    <div>
+                        <h3>最佳成绩</h3>
+                        <p id="best-time">--:--:---</p>
+                    </div>
+                </div>
+                
+                <div class="timer" id="timer">00:00:000</div>
+                
+                <div class="game-area" id="game-area">
+                    <p id="game-message">点击开始按钮开始挑战</p>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn primary-btn" id="start-btn">开始挑战</button>
+                    <button class="btn secondary-btn" id="reset-btn">重置</button>
+                </div>
+                
+                <div class="phone-input">
+                    <input type="tel" id="phone" placeholder="请输入您的手机号码" maxlength="11">
+                    <button class="btn primary-btn" id="save-btn" disabled>保存成绩</button>
+                </div>
+                
+                <div class="success-message" id="success-message">
+                    成绩已保存！感谢您的参与！
+                </div>
+                
+                <div class="sync-status" id="sync-status"></div>
+            </section>
+            
+            <section class="data-section">
+                <h2 class="section-title">排行榜</h2>
+                
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>手机号</th>
+                                <th>模式</th>
+                                <th>用时</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body">
+                            <tr>
+                                <td colspan="4" style="text-align: center;">加载中...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="admin-section">
+                    <h3 class="section-title">开发者面板</h3>
+                    <div class="admin-panel">
+                        <input type="password" id="admin-password" placeholder="请输入管理员密码" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none;">
+                        <button class="btn export-btn" id="export-btn">导出数据到Excel</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
